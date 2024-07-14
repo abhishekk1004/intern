@@ -62,3 +62,5 @@ def product_list(request):
             products = products.filter(address__icontains=address)
     
     return render(request, 'product_list.html', {'products': products, 'form': form})
+
+

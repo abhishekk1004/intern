@@ -21,10 +21,9 @@ from django.conf.urls.static import static
 from product import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.home, name='home'), 
-    path('products/', include('product.urls')),
-    path('accounts/', include('accounts.urls')),
+    path('admin/', admin.site.urls), 
+    path('products', include('product.urls')),
+    path('', include('accounts.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
